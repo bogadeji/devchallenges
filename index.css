@@ -247,7 +247,45 @@ select {
 /* ------------------------- */
 
 /* Component page */
+body {
+    background-color: hsl(var(--clr-dark) / 0.9);
+}
+.project-list {
+    grid-template-columns: repeat(3, 1fr);
+    --gap: 2rem;
+}
+.project-list > div {
+    background-color: hsl(var(--clr-dark));
+    padding: 1.5rem 1rem;
+    color: hsl(215, 18.7%, 82.2%)
+}
 
+.project-list > div,
+.project-list > div > img {
+    border-radius: 5px;
+}
+.project-list > div > img {
+    /* width: 100%; */
+    max-height: 170px;
+    width:;
+}
+.project-list > div button {
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+.buttons > *:where(:not(:last-child)) {
+    /* margin-right: var(--flow-space, 1rem); */
+}
+.buttons {
+    grid-template-columns: repeat(3, 1fr);
+    --gap: 0.5rem;
+}
+button {
+    background-color: hsl(var(--clr-white));
+    border: none;
+    /* color: hsl(215, 18.7%, 82.2%) */
+}
 
 /* ------------------------- */
 /* ~~~~~ Media Queries ~~~~~ */
