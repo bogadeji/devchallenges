@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="interior.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="bg-dark text-white">
+    <header class="flex">
+        <p class="logo uppercase ff-serif fs-400">This Interior</p>
+        <button class="toggle-mobile bg-dark text-accent" data-visible="true"><span class="material-icons open-menu">menu</span><span class="material-icons close-menu">close</span></button>
+        <nav>
+            <ul class="navigation flex ff-sans fs-400" data-visible="true">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Collection</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <section class="container">
+        <div class="design-details flow" style="--flow-space:2rem">
+            <h1 class="ff-serif2 title fs-700">Modern interior</h1>
+            <p class="ff-sans description fs-500">A full-Service residential & commercial interior design and staging company offering professional organizing and eco-services</p>
+            <p class="ff-sans read-more fs-400"><a>Read more <i></i></a></p>
+        </div>
+        <div class="designer">
+            <img src="photo1.png" alt="Interior design picture">
+            <div class="bg-dark">
+                <div class="designer-info flex">
+                    <img class="designer-img" src="photo2.png" alt="Designer Image" >
+                    <div class="ff-sans">
+                        <p class="designer-name fs-300">Aliza Webber</p>
+                        <p class="designer-title fs-200 text-light">Interior designer</p>
+                    </div>
+                </div>
+                <h2 class="ff-serif2 fs-500">Designed in 2020 by Aliza Webber</h2>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // When someone clicks the hamburger button
+        // if the menu is closed, open it
+        // if the menu is open, close it
+        const nav = document.querySelector(".navigation");
+        const navToggle = document.querySelector(".toggle-mobile");
+
+        navToggle.addEventListener("click", () => {
+            
+            const visibility = nav.getAttribute("data-visible");
+            if (visibility === "false") {
+                nav.setAttribute("data-visible", true);
+                navToggle.setAttribute("data-visible", true);
+                navToggle.setAttribute("aria-expanded", true);
+            } else {
+                nav.setAttribute("data-visible", false);
+                navToggle.setAttribute("data-visible", false);
+                navToggle.setAttribute("aria-expanded", false);
+
+            }
+
+        })
+    </script>
+</body>
+</html>
