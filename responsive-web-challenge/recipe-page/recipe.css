@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* ------------------------- */
 /* ~~~~~~~ Custom Properties ~~~~~~~ */
@@ -8,15 +8,15 @@
     
     /* Colors */
 
-    --clr-dark: 230 35% 7%;
-    --clr-light: 231 77% 90%;
+    --clr-dark: 0 0% 0%;
+    --clr-light: 28 87% 62%;
     --clr-white: 0 0% 100%;
 
-    --clr-primary: 230 35% 7%;
-    --clr-secondary: 230 35% 7%;
-    --clr-tertiary: 230 35% 7%;
-    --clr-accent1: 230 35% 7%;
-    --clr-accent2: 230 35% 7%;
+    --clr-primary: 0 0% 20%;
+    --clr-accent1: 0 0% 77%;
+    --clr-accent2: 0 0% 31%;
+    --clr-accent3: 0 0% 74%;
+    --clr-accent4: 0 0% 51%;
 
     /* Font Sizes */
         /* consider using clamp for your custom fonts sizes
@@ -24,19 +24,25 @@
         */
         --fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
         --fs-800: clamp(2rem, 6vw + 1rem, 3.5rem);
-        --fs-700: clamp(1.8rem, 5vw + 1rem, 2.3rem);
-        --fs-600: clamp(1.5rem, 4vw + 1rem, 1.75rem);
-        --fs-500: clamp(0.9375rem, 3vw + 1rem, 1.5rem);
-        --fs-400: clamp(0.625rem, 1vw + 0.7625rem, 1.1rem);
+        --fs-700: clamp(1.2rem, 4vw + 0.3rem, 3rem);
+        --fs-600: clamp(0.9375rem, 3vw + 1rem, 1.5rem);
+        --fs-500: clamp(0.625rem, 1vw + 0.7625rem, 1.1rem);
+        --fs-400: clamp(0.625rem, 1vw + 0.7625rem, 1rem);
         --fs-300: clamp(0.675rem, 0.5vw + 1rem, 0.9rem);
         --fs-200: clamp(0.6rem, 0.5vw + 0.5rem, 0.875rem);
+        --fs-100: 10px;
 
     /* Font families */
-    --ff-serif: "Bellefair", serif;
-    --ff-sans-cond: "Barlow Condensed", sans-serif;
-    --ff-sans-normal: "Barlow", sans-serif;
-    --ff-monospace: 'Inconsolata', monospace;
-    --ff-sans-space: 'Space mono', monospace;
+    --ff-serif: "Playfair Display", serif;
+    --ff-sans-cond: "Montserrat", sans-serif;
+
+    /* Font weights */
+    --ff-reg: 400;
+    --ff-bold: 500;
+    --ff-bolder: 700;
+
+    /* Font-style */
+    --fstyle-italic: italic
 }
 
 /* ------------------------- */
@@ -152,7 +158,7 @@ select {
 }
 
 .container {
-    padding: 5vmin 10vmin;
+    padding: 5rem 5rem;
     margin: 0 auto;
     /* Or use the code below
     padding-inline: 2rem
@@ -205,18 +211,21 @@ select {
 .text-white { color: hsl(var(--clr-white))}
 
 .text-primary { color: hsl(var(--clr-primary))}
-.text-secondary { color: hsl(var(--clr-secondary))}
-.text-tertiary { color: hsl(var(--clr-tertiary))}
 .text-accent1 { color: hsl(var(--clr-accent1))}
 .text-accent2 { color: hsl(var(--clr-accent2))}
+.text-accent3 { color: hsl(var(--clr-accent3))}
+.text-accent3 { color: hsl(var(--clr-accent4))}
 
 /* typography */
 
 .ff-serif { font-family: var(--ff-serif); } 
-.ff-sans-cond { font-family: var(--ff-sans-cond); } 
-.ff-sans-normal { font-family: var(--ff-sans-normal); } 
-.ff-monospace {font-family: var(--ff-monospace);}
-.ff-sans-space {font-family: var(--ff-sans-space);}
+.ff-sans-cond { font-family: var(--ff-sans-cond); }
+
+.fw-reg { font-weight: var(--ff-reg);}
+.fw-bold { font-weight: var(--ff-bold);}
+.fw-bolder { font-weight: var(--ff-bolder);}
+
+.fstyle-italic { font-style: var(--fstyle-italic);}
 
 .letter-spacing-1 { letter-spacing: 4.75px; } 
 .letter-spacing-2 { letter-spacing: 2.7px; } 
@@ -232,6 +241,7 @@ select {
 .fs-400 { font-size: var(--fs-400); }
 .fs-300 { font-size: var(--fs-300); }
 .fs-200 { font-size: var(--fs-200); }
+.fs-100 { font-size: var(--fs-100); }
 
 
 .fs-900,
@@ -248,24 +258,229 @@ select {
 
 /* Component page */
 
+strong {
+    font-weight: var(--ff-bolder);
+}
+
+header h1.fs-700{
+    line-height: 1.8;
+}
+.drag {
+    transform: rotate(90deg);
+}
+
+.description {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    line-height: 1.2;
+}
+.description p {
+    max-width: 65ch;
+}
+.drag {
+    transform: rotate(90deg);
+    font-size: inherit;
+}
+
+.recipe {
+    --flow-space: 2em;
+    grid-template-areas: 'image image'
+                            'ingredients summary'
+                            'instructions summary';
+    grid-gap: 0 5rem;
+}
+.recipe img{
+    grid-area: image;
+}
+
+.summary {
+    width: max-content;
+    height: max-content;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 3em;
+    grid-area: summary;
+}
+
+.summary > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5em
+}
+
+.summary > span {
+    font-size: 36px;
+}
+.ingredients {
+    grid-area: ingredients;
+}
+
+.instructions {
+    grid-area: instructions;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    --flow-space: 2em
+}
+
+.ingredients ul {
+    --flow-space: 1em;
+}
+.instructions ul li
+ {
+    display: flex;
+    /* gap: 0.6em */
+}
+
+label input[type="checkbox" i] {
+    border-width: 4px;
+    border : 6px solid blue;
+}
+
+.instructions ul li span,
+.ingredients ul li input {
+    margin-right: 1rem;
+    background: hsl(var(--clr-light));
+    color: hsl( var(--clr-white));
+    font-family: var(--ff-serif);
+    font-weight: var(--ff-bold);
+    font-size: var(--fs-500);
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.ingredients ul li input  {
+    flex: 0 0 21px;
+    height: 21px;
+    border: 1px solid #828282;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.instructions ul li span  {
+    display: flex;
+    border-radius: 6px;
+    height: 36px;
+    flex: 0 0 36px;
+}
+
+.instructions ul li p {
+    display: block
+}
+
+label {
+    display: block;
+    position: relative;
+    padding-left: calc(35px + 1em);
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px solid hsl(var(--clr-accent4));
+    border-radius: 2px;
+  }
+  
+  label:hover input ~ .checkmark {
+    background-color: hsl(var(--clr-accent4));
+  }
+  
+    label input:checked ~ .checkmark {
+    background-color: hsl(var(--clr-white)));
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid hsl(28 87% 62%);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 
 /* ------------------------- */
 /* ~~~~~ Media Queries ~~~~~ */
 /* ------------------------- */
 
-/* Small Screens */
-@media (max-width: 35em) {
-}
-
-/* Tablets */
-@media (min-width: 35em) and (max-width: 44.999em) {
-}
-
 /* Tablets and small screens */
 @media (max-width: 44.999em) {
+    .container {
+        padding: 10vmin 2rem;
+    }
+
+    .recipe {
+        grid-template-areas: 'image'
+                                'summary'
+                                'ingredients'
+                                'instructions';
+        grid-gap: 1em;
+    }
+    
+    .summary {
+        --flow-space: 0;
+        display: grid;
+        grid-template-areas: 'yield yield yield'
+                                'prep cook total';
+        gap: 1em 2em;
+        box-shadow: unset;
+        border-radius: unset;
+        padding: unset;
+    }
+
+    .yield {
+        grid-area: yield;
+    }
+
+    .prep {
+        grid-area: prep;
+    }
+
+    .cook {
+        grid-area: cook;
+    }
+
+    .total {
+        grid-area: total;
+    }
 }
 
 /* Desktop */
-@media (min-width: 45em) {
-
+@media (min-width: 70em) {
+    .container {
+        padding: 5rem 15rem;
+    }
 }

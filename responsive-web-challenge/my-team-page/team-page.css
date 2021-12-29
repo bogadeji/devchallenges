@@ -315,10 +315,13 @@ select {
     .gallery {
         grid-template-columns: repeat(3, 1fr);
         row-gap: 8rem;
-        column-gap: 5rem;
+        column-gap: 4rem;
         padding: 5rem 0;
     }
     .gallery div:where(:nth-child(3n+2)) {
         transform: translateY(20%);
     }
+    .job-title {
+        right: -0.5rem;
+    } 
 }
