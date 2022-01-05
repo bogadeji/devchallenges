@@ -5,130 +5,152 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../../js/nav.js" defer ></script>
 </head>
 <body>
     <header>
         <p class="logo">Edie</p>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#our-works">Our Works</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav__list fw-bold">
+            <ul class="nav__links">
+                <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
+                <li class="nav__item"><a class="nav__link" href="#our-works">Our Works</a></li>
+                <li class="nav__item"><a class="nav__link" href="#clients">Clients</a></li>
+                <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main class="container">
-        <section>
-            <h1>
-                <span>Unhappy with your website?</span>
-                <span>We create beautiful and fast web services</span>
+        <section class="hero-section flex">
+            <h1 class="fw-bold flow">
+                <span class="text-blue fs-300">Unhappy with your website?</span>
+                <span class="fs-700 d-block hero">We create beautiful and fast web services</span>
             </h1>
-            <h2>Story, emotion and purpose</h2>
-            <p>We help transform your ideas into real world applications that will outperform your toughest competition and help you achieve your strategic goals in short period of time.</p>
-            <form>
-                <label>Want us to contact you?</label>
-                <input placeholder="Email" type="email">
-                <button>Join</button>
-            </form>
+            <img src="assets/heroImage.jpg" alt="" >
+            <div class="hero--contact flow">
+                <h2 class="fs-700 fw-bold d-block hero">Story, emotion and purpose</h2>
+                <p class="fs-300 text-accent">We help transform your ideas into real world applications that will outperform your toughest competition and help you achieve your strategic goals in short period of time.</p>
+                <form class="contact-us flow">
+                    <label class="text-accent2 fs-100 d-block">Want us to contact you?</label>
+                    <div>
+                        <input placeholder="Email" type="email" class="text-accent4 fs-300">
+                        <button class="bg-blue text-white">Join</button>
+                    </div>
+                </form>
         </section>
-        <section>
-            <h2>We offer high demand services</h2>
-            <div>
-                <img src="" alt="">
-                <h3>UI/UX Design</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.</p>
-                <button>Get started</button>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h3>Front End</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.</p>
-                <button>Get started</button>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h3>Back End</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.</p>
-                <button>Get started</button>
+        <section class="section services--section container flow">
+            <h2 class="section--title fs-600 fw-bold">We offer high demand services</h2>
+            <div class="services flex">
+                <div class="service flow">
+                    <div class="service--icon bg-blue"><span class="material-icons text-white">edit</span></div>
+                    <h3 class="fs-500 fw-bolder">UI/UX Design</h3>
+                    <p class="fs-200 text-accent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.</p>
+                    <button class="bg-accent5">Get started</button>
+                </div>
+                <div class="service flow">
+                    <div class="service--icon bg-green"><span class="material-icons text-white">code</span></div>
+                    <h3 class="fs-500 fw-bolder">Front End</h3>
+                    <p class="fs-200 text-accent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.</p>
+                    <button class="bg-accent5">Get started</button>
+                </div>
+                <div class="service flow">
+                    <div class="service--icon bg-red"><span class="material-icons text-white">list</span></div>
+                    <h3 class="fs-500 fw-bolder">Back End</h3>
+                    <p class="fs-200 text-accent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.</p>
+                    <button class="bg-accent5">Get started</button>
+                </div>
             </div>
         </section>
-        <section>
-            <h2>Good design means good business</h2>
-            <div>
-                <div>
-                    <img src="" alt="">
-                    <p>Full stack application</p>
-                    <h3 class="title">Smart home dashboard</h3>
+        <section class="section projects--section container flex">
+            <h2 class="section--title fs-600 fw-bold">Good design means good business</h2>
+            <div class="projects grid">
+                <div class="project">
+                    <img src="assets/smarthome.jpg" alt="">
+                    <p class="fs-100 text-accent2">Full stack application</p>
+                    <h3 class="title fs-400 fw-bold">Smart home dashboard</h3>
                 </div>
-                <div>
-                    <img src="" alt="">
-                    <p>UI/UX design</p>
-                    <h3 class="title">Onboard application</h3>
+                <div class="project">
+                    <img src="assets/onboard.png" alt="">
+                    <p class="fs-100 text-accent2">UI/UX design</p>
+                    <h3 class="title fs-400 fw-bold">Onboard application</h3>
                 </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Mobile applicationi</p>
-                    <h3 class="title">Booking system</h3>
+                <div class="project">
+                    <img src="assets/booking.png" alt="">
+                    <p class="fs-100 text-accent2">Mobile application</p>
+                    <h3 class="title fs-400 fw-bold">Booking system</h3>
                 </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Front End applicationi</p>
-                    <h3 class="title">Juice product homepage</h3>
+                <div class="project">
+                    <img src="assets/juice-product.png" alt="">
+                    <p class="fs-100 text-accent2">Front End application</p>
+                    <h3 class="title fs-400 fw-bold">Juice product homepage</h3>
                 </div>
             </div>
-            <p>see more <span class="material-icons"></span></p>
+            <p class="see-more text-blue fs-400 fw-bold"><a>see more<span class="material-icons">trending_flat</span></a></p>
         </section>
-        <section>
-            <div>
-                <h2>
-                    <span>Meet the team</span>
-                    <span>We are chilled and a laidback team</span>
+        <section class="section team--section container flow flex">
+            <div class="team--details flow">
+                <h2 class="flow">
+                    <span class="text-red">Meet the team</span>
+                    <span class="section--title d-block fs-600 fw-bold">We are chilled and a laidback team</span>
                 </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            <div>
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+            <div class="team--pictures flex">
+                <div class="img-set--one">
+                    <img src="assets/person1.png" alt="">
+                </div>
+                <div class="img-set--two flex">
+                    <img src="assets/person2.png" alt="" class="person2">
+                    <img src="assets/person3.png" alt="">
+                </div>
             </div>
         </section>
-        <section class="testimonial">
-            <quote>"Fast and outstanding results. Edie understands their customer's needs. They have a young and talented team."</quote>
-            <div>
-                <img src="" alt="">
-                <div class="testator">
-                    <p>Carlos Tran</p>
-                    <p>The Decorate Gatsby</p>
+        <section class="section container testimonial flow">
+            <p class="fs-500 fw-bold">"Fast and outstanding results. Edie understands their customer's needs. They have a young and talented team."</p>
+            <div class="testator flex">
+                <div class="testator--img">
+                    <img src="assets/person4.png" alt="">
+                </div>
+                <div class="testator--details flow ">
+                    <p class="testator--name fs-400 fw-bold">Carlos Tran</p>
+                    <p class="testator--title fs-300 text-accent2">The Decorate Gatsby</p>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
+    <footer class="bg-dark2 text-white">
         <div>
-            <ul>
-                <li><a>Home</a></li>
-                <li><a>Services</a></li>
-                <li><a>Our Workds</a></li>
-                <li><a>Clients</a></li>
-                <li><a>Contact</a></li>
+            <ul class="flow">
+                <li><a class="fw-normal fs-300">Home</a></li>
+                <li><a class="fw-normal fs-300">Services</a></li>
+                <li><a class="fw-normal fs-300">Our Works</a></li>
+                <li><a class="fw-normal fs-300">Clients</a></li>
+                <li><a class="fw-normal fs-300">Contact</a></li>
             </ul>
         </div>
         <div>
             <p class="logo">Edie</p>
             <div>
-                <span class="material-icons"></span>
-                <span class="material-icons"></span>
-                <span class="material-icons"></span>
+                <ul class="flex">
+                    <li class="social-list__item"><a href="https://www.instagram.com" target="_blank" class="social-list__link text-white"><i class="fab fa-instagram fa-instagram-square"></i></a></li>
+                    <li class="social-list__item"><a href="https://www.linkedin.com/" target="_blank" class="social-list__link"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="social-list__item"><a href="https://www.twitter.com" target="_blank" class="social-list__link text-white"><i class="fab fa-twitter-square"></i></a></li>
+                </ul>
             </div>
         </div>
         <div>
-            <form>
-                <label>Want us to contact you?</label>
-                <input placeholder="Email" type="email">
-                <button>Join</button>
+            <form class="contact-us flow">
+                <label class="text-accent2 fs-100 d-block">Want us to contact you?</label>
+                    <div>
+                        <input placeholder="Email" type="email" class="text-accent4 fs-300">
+                        <button class="bg-blue text-white">Join</button>
+                    </div>
             </form>
         </div>
     </footer>
