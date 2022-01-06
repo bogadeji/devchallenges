@@ -28,13 +28,13 @@
         */
         --fs-900: clamp(5rem, 7vw + 1rem, 9.375rem);
         --fs-800: clamp(2rem, 6vw + 1rem, 3.5rem);
-        --fs-700: 3rem;
-        --fs-600: 2.5rem;
-        --fs-500: 2rem;
-        --fs-400: 1.5rem;
-        --fs-300: 1.125rem;
+        --fs-700: clamp(1.5rem, 2vw + 1rem, 3rem);
+        --fs-600: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+        --fs-500: clamp(1.5rem,2vw + 1rem, 2.25rem);
+        --fs-400: clamp(1.125rem, 1vw + 0.5rem, 1.5rem);
+        --fs-300: clamp(0.75rem, 1vw + 0.5rem, 1.125rem);
         --fs-200: 1rem;
-        --fs-100: 0.875rem;
+        --fs-100: clamp(0.625rem, 1vw + 0.3rem, 0.875rem);
         --fs-50: 0.625rem;
 
     /* Font families */
@@ -163,7 +163,7 @@ button, a {
 }
 
 .container {
-    padding: 5vmin 10vmin;
+    padding: 5vmin 3rem;
     margin: 0 auto;
     /* Or use the code below
     padding-inline: 2rem
@@ -302,7 +302,10 @@ header ul li {
 .hero-section {
     flex-direction: column;
     gap: 1.5em;
-    padding: 0 10em;
+}
+
+.hero-section h1 {
+    margin: 0 12rem;
 }
 
 .hero {
@@ -313,14 +316,12 @@ header ul li {
 .hero-section img {
     margin: 2em auto;
     border-radius: 18px;
-    width: calc(100% + 24em);
-    max-width: unset;
-    position: relative;
-    left: -12em;
+    width: 100%;
 }
 
 .hero--contact {
     max-width: 400px;
+    margin-left: 12rem;
     --flow-space: 2em
 }
 
@@ -344,7 +345,7 @@ form.contact-us div input {
 }
 
 form.contact-us div button {
-   
+    font-size: 18px;
     height: 83%;
     outline: none;
     border: none;
@@ -353,14 +354,16 @@ form.contact-us div button {
     border-radius: 12px;
 }
 
-.services--section h2 {
-    max-width: 15ch;
-    line-height: 1.4;
-}
+
 
 .services--section {
     --flow-space: 3em;
-    margin: 8em auto 0;
+    margin: 8em 8rem 0;
+}
+
+.services--section h2 {
+    max-width: 15ch;
+    line-height: 1.4;
 }
 
 .services {
@@ -413,6 +416,8 @@ form.contact-us div button {
 
 .projects--section {
     flex-direction: column;
+    margin: 0 8rem 0;
+    --gap: 2rem;
 }
 
 .projects--section h2 {
@@ -438,40 +443,25 @@ form.contact-us div button {
     position: relative;
 }
 
-.project:nth-child(2n + 1) {
-    transform: translateY(20%);
-}
-
-.see-more {
-    transform: translateY(200%);
+.see-more a {
     display: flex;
     align-items: center;
-    align-self: flex-end;
 }
-
+    
 .see-more span {
     margin-left: 0.5rem;
 }
 
 
 
-
 .team--section {
-    margin: 15em auto 10em;
+    margin: 15em 8rem 10em;
     flex-direction: row;
 }
 
-.team--section > * {
-    flex: 50%
-}
-
-.team--details {
-    justify-content: center;
-    align-self: center;
-}
 
 .team--details > * {
-    max-width: 320px
+    max-width: 320px;
 }
 
 .team--details,
@@ -479,8 +469,14 @@ form.contact-us div button {
     --flow-space: 1.2rem;
 }
 
-.team--details .section--title {
+
+.team--details .meet {
+    font-size: 18px;
+}
+
+.team--details .section-title {
     line-height: 1.5;
+    font-size: 36px;
 }
 
 .team--pictures img {
@@ -502,17 +498,19 @@ form.contact-us div button {
 }
 
 
-
-
 .testimonial {
-    --flow-space: 3em
+    --flow-space: 3em;
+    margin: 0 8rem 10rem;
+    width: 65%;
 }
 
-.testimonial > p {
-    max-width: 40ch;
+.testimonial q {
     line-height: 1.5;
 }
 
+cite {
+    font-style: normal;
+}
 .testator {
     gap: 1.5rem;
     align-items: center;
@@ -521,6 +519,8 @@ form.contact-us div button {
 .testator--img {
     width: 82px;
     height: 82px;
+    max-width: 82%;
+    max-height: 82px;
     background: #C4C4C4;
 }
 
@@ -529,8 +529,21 @@ form.contact-us div button {
     border-radius: 12px;
 }
 
+.testator--img img {
+    width: 100%;
+    height: 100%;
+}
+
 .testator--details {
     --flow-space: 0.5em
+}
+
+.testator--name {
+    font-size: 24px;
+}
+
+.testator--title {
+    font-size: 18px;
 }
 
 
@@ -539,12 +552,16 @@ form.contact-us div button {
 footer {
     display:  grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 3em 6em 5em;
+    padding: 3em 8rem 5em;
 }
 
 footer ul {
     --flow-space: 0.8em;
     padding: 0;
+}
+
+footer .footer--links {
+    font-size: 18px;
 }
 
 footer li {
@@ -568,32 +585,27 @@ footer li i:active {
 /* ~~~~~ Media Queries ~~~~~ */
 /* ------------------------- */
 
-/* Small Screens */
-@media (min-width: 35em) {
-}
-
-/* Tablets */
-@media (min-width: 35em) and (max-width: 44.999em) {
-}
-
-/* Tablets and small screens */
-@media (max-width: 44.999em) {
-}
-
-/* Desktop */
-@media (max-width: 1200px) {
+@media (max-width: 1298px) {
     .service {
         padding: 1em 1.5em;
     }
+}
+
+@media (min-width: 600.9999999px) and (max-width: 1194px) {
 
     .service h3 {
         max-width: 5ch;
     }
 }
+@media (min-width: 900px) {
+    .project:nth-child(2n + 1) {
+        transform: translateY(20%);
+    }
+}
 
-@media (max-width: 900px) {
+@media (max-width: 899.9999px) {
     .container {
-        padding: 10vmin;
+        padding: 10vmin 2rem;
     }
 
     .hamburger {
@@ -640,9 +652,9 @@ footer li i:active {
     }
 
     nav {
-        background: hsl(var(--clr-dark2) / 0.95);
+        background: hsl(var(--clr-dark) / 0.95);
         position: fixed;
-        color: hsl(var(--clr-light));
+        color: hsl(var(--clr-white));
         top: 0;
         bottom: 0;
         left: 0;
@@ -655,11 +667,12 @@ footer li i:active {
     
     @supports(backdrop-filter: blur(1rem)) {
         nav {
-            background: hsl(var(--clr-dark2) / 0.75);
+            background: hsl(var(--clr-dark) / 0.75);
             backdrop-filter: blur(2rem);
         }
     }
-    .nav__list {
+    .nav__list,
+    .nav__links {
         flex-direction: column;
         justify-content: space-evenly;
         height: 100vh;
@@ -671,9 +684,10 @@ footer li i:active {
 
     .nav__link {
         font-weight: var(--fw-bold);
-        font-size: var(--fs-500);
+        font-size: var(--fs-300);
         text-decoration: none;
-        color: hsl(var(--clr-dark))
+        color: hsl(var(--clr-dark));
+        color: red;
     }
 
     .nav__link:hover {
@@ -690,7 +704,7 @@ footer li i:active {
     }
 
     .nav__item a {
-        color: hsl(var(--clr-accent))
+        color: hsl(var(--clr-white));
     }
 
     .nav-open {
@@ -714,13 +728,77 @@ footer li i:active {
     }
 
 
+    .hero-section h1,
+    .hero--contact,
+    .section--title {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .services--section,
+    .projects--section,
+    .team--section,
+    .testimonial {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    
+
+    .service:hover,
+    .service:active,
+    .service:focus {
+        padding: 3em -6em;
+    }
 
 
+    .testimonial {
+        width: 80%;
+    }
+
+    footer {
+        padding-right: 2rem;
+        padding-left: 2rem;
+        grid-template-columns: 1fr 1fr 2fr;
+        gap: 0;
+    }
+}
 
 
+@media (min-width: 600px) {
+    .see-more {
+        transform: translateY(200%);
+        display: flex;
+        align-items: center;
+        align-self: flex-end;
+    }
 
+    .team--section > * {
+        flex: 50%
+    }
+    
+    .team--details {
+        justify-content: center;
+        align-self: center;
+    }
+}
 
+@media (max-width: 599.99999px) {
+    .container {
+        padding: 5vmin 1rem;
+    }
+    
+    .hero--contact {
+        max-width: unset;
+    }
 
+    .hero-section img {
+        height: 150px;
+        object-fit: cover;
+    }
+
+    form.contact-us div button {
+        font-size: 14px;
+    }
 
     .services {
         flex-direction: column;
@@ -728,12 +806,31 @@ footer li i:active {
     }
 
     .service {
-        padding: 3em 0;
+        padding: 3em;
     }
 
-    .service:hover,
-    .service:active,
-    .service:focus {
-        padding: 3em -6em;
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 7rem;
+        margin-bottom: 4em;
+    }
+
+    .team--section {
+        margin-top: 10rem;
+        flex-direction: column;
+    }
+    
+    .testimonial {
+        margin: 0 0 5rem;
+        width: 100%;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: left;
+        gap: 3rem;
+        padding-bottom: 15rem;
     }
 }
