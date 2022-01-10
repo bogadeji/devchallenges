@@ -126,13 +126,6 @@ const formValidation = () => {
         
     })
 
-    // inputs.forEach(input => {
-    //     console.log(input)
-    //     input.addEventListener('input', () => {
-            
-    //         validateInput(input)
-    //     })
-    // })
 
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
