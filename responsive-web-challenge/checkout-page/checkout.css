@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+/* ------------------------- */
+/* ~~~~~~~ Custom Properties ~~~~~~~ */
+/* ------------------------- */
+
+:root {
+    
+    /* Colors */
+
+    --clr-dark: 160 2% 31%;
+    --clr-light: 28 87% 62%;
+    --clr-white: 0 0% 100%;
+
+    --clr-primary: 0 0% 20%;
+    --clr-secondary: 0 0% 51%;
+    --clr-tertiary: 0 0% 31%;
+    --clr-accent1: 0 0% 95%;
+    --clr-accent2: 0 0% 88%;
+    --clr-accent3: 0 0% 74%;
+
+
+    /* Font Sizes */
+        /* consider using clamp for your custom fonts sizes
+        Also, consider using vmin and vmax
+        */
+        --fs-900: clamp(2rem, 6vw + 1rem, 3.5rem);
+        --fs-800: clamp(1.5rem, 2vw + 1rem, 3rem);
+        --fs-700: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+        --fs-600: clamp(1.5rem,2vw + 1rem, 2.25rem);
+        --fs-500: clamp(0.875rem, 1vw + 0.5rem, 1.125rem);
+        --fs-400: 1rem;
+        --fs-300: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+        --fs-200: clamp(0.75rem, 1vw + 0.5rem, 1rem);
+        --fs-100: clamp(0.625rem, 1vw + 0.3rem, 0.75rem);
+        --fs-50: 0.625rem;
+
+    /* Font families */
+    --ff-sans-normal: "Montserrat", sans-serif;
+}
+
+/* ------------------------- */
+/* ~~~~~~~ Reset ~~~~~~~ */
+/* ------------------------- */
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset Margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: var(--font-weight, 400);
+}
+
+/*  Set up the body */
+body {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-200);
+    font-weight: 600;
+    background-color: hsl(var(--clr-white));
+    color: hsl(var(--clr-dark));
+    line-height: 1.5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    /* display: block; */
+}
+
+/* Make forms easier to work with  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Remove animations for people who turned them off */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important
+    }
+}
+
+/* ------------------------- */
+/* ~~~~~~~ Utilities ~~~~~~~ */
+/* ------------------------- */
+
+/* general */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.d-block {
+    display: block;
+}
+
+/* .flow > *:not(:first-child) {
+    margin-top: 1rem; 
+} */
+.flow > * + * {
+    margin-top: var(--flow-space, 1rem);
+}
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small {
+    --flow-space: 0.5rem
+}
+
+.container {
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 90rem;
+}
+
+
+/* colors */
+.bg-dark { background-color: hsl(var(--clr-dark))}
+.bg-light { background-color: hsl(var(--clr-light))}
+.bg-white { background-color: hsl(var(--clr-white))}
+
+.bg-accent1 { background-color: hsl(var(--clr-accent1))}
+.bg-accent2 { background-color: hsl(var(--clr-accent2))}
+
+.text-dark { color: hsl(var(--clr-dark))}
+.text-light { color: hsl(var(--clr-light))}
+.text-white { color: hsl(var(--clr-white))}
+
+.text-primary { color: hsl(var(--clr-primary))}
+.text-secondary { color: hsl(var(--clr-secondary))}
+.text-tertiary { color: hsl(var(--clr-tertiary))}
+.text-accent1 { color: hsl(var(--clr-accent1))}
+.text-accent2 { color: hsl(var(--clr-accent2))}
+.text-accent3 { color: hsl(var(--clr-accent3))}
+
+/* typography */
+
+.ff-sans-normal { font-family: var(--ff-sans-normal); }
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }
+
+.strikethrough {text-decoration-line: line-through;}
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+.fs-100 { font-size: var(--fs-100); }
+.fs-50 { font-size: var(--fs-50); }
+
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+
+/* ------------------------- */
+/* ~~~~~~~ Components ~~~~~~~ */
+/* ------------------------- */
+
+section.container {
+    --flow-space: 2rem;
+}
+
+.cart-info {
+    flex-direction: column;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-group {
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+table tbody {
+    display: block;
+    overflow: auto;
+    max-height: 500px;
+}
+
+table tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+}
+
+table tbody tr {
+    grid-template-rows: 15rem;
+}
+
+table tr td {
+    padding: 1rem 0;
+}
+
+table tbody tr td {
+    padding-bottom: 3rem;
+}
+
+td.img {
+    height: 100%;
+    object-fit: cover;
+}
+
+td.img,
+td.img img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+td > div {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+tfoot::before {
+    content: '';
+    display: block;
+    height: 5rem;
+}
+tfoot tr {
+    border-top: 1px solid hsl(var(--clr-accent3));
+}
+
+.price-control {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    width: max-content;
+    padding: 0.7rem 0.5rem;
+    border: 1px solid hsl(var(--clr-secondary));
+    border-radius: 12px;
+}
+
+.price-control button {
+    font-size: var(--fs-400);
+    width: 21px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    background: hsl(var(--clr-accent2));
+    border: none;
+    border-radius: 3px;
+}
+
+.price-control input {
+    font-size: var(--fs-100);
+    max-width: 40px;
+    width: 40px;
+    background-color: inherit;
+    text-align: center;
+    overflow: hidden;
+}
+
+.price-control input::placeholder {
+    font-size: var(--fs-400);
+    color: hsl(var(--clr-secondary));
+}
+
+.price-control input::-moz-placeholder,
+.price-control input::-ms-input-placeholder,
+.price-control input::-webkit-input-placeholder{
+    color: hsl(var(--clr-secondary));
+}
+
+.line-item--value {
+    font-size: 14px;
+    text-align: right;
+}
+
+form {
+    --flow-space: 3rem;
+}
+
+.input-group {
+    margin-top: 1.2rem;
+}
+
+input::placeholder,
+input::-moz-placeholder,
+input::-ms-input-placeholder,
+input::-webkit-input-placeholder {
+    color: hsl(var(--clr-secondary))
+}
+
+input, select {
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+.input-group--input {
+    width: 100%;
+    border: 1px solid hsl(var(--clr-secondary));
+    height: 50px;
+    border-radius: 12px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 20px 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.938rem 0.5rem;
+}
+
+.input-group--input span {
+    font-size: 20px;
+    width: max-content;
+}
+
+.country-group {
+    gap: 1.3rem;
+}
+
+.country-group > * {
+    flex: 1 1;
+}
+
+.input-group span.error {
+    color: red;
+}
+
+label.checkbox-label {
+    display: block;
+    position: relative;
+    padding-left: calc(19px + 1em);
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+label.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    border: 1px solid hsl(var(--clr-secondary));
+    border-radius: 4px;
+  }
+  
+  label.checkbox-label:hover input ~ .checkmark {
+    background-color: hsl(var(--clr-white));
+  }
+  
+    label.checkbox-label input:checked ~ .checkmark {
+    background-color: hsl(var(--clr-white));
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  label.checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  label.checkbox-label .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid hsl(28 87% 62%);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  input:required:invalid + label { color: red; }
+  input:required:valid + label { color: green; }
+
+.submit {
+    border: none;
+    padding: 1rem 3rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    float: right;
+}
+
+.submit[disabled=true] {
+    opacity: 0.3;
+    /* background-color: hsl(var(--clr-accent3)); */
+}
+
+
+/* ------------------------- */
+/* ~~~~~ Media Queries ~~~~~ */
+/* ------------------------- */
+
+/* Small Screens */
+@media (max-width: 35em) {
+}
+
+/* Tablets */
+@media (min-width: 35em) and (max-width: 44.999em) {
+}
+
+/* Tablets and small screens */
+@media (max-width: 44.999em) {
+}
+
+/* Desktop */
+@media (min-width: 45em) {
+
+}
+
+@media (max-width: 350px) {
+    table tbody tr {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    table tbody tr:where(:not(:last-child)) {
+        border-bottom: 1px solid hsl(var(--clr-secondary));
+    }
+
+    table tbody tr td {
+        padding-bottom: 1rem;
+    }
+
+    table tr td {
+        padding: 1rem;
+    }
+
+    
+
+    td > div {
+        --flow-space: 0;
+    }
+
+    .country-group {
+        flex-direction: column;
+        gap: 0
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        padding: 3rem;
+    }
+
+    .cart-info {
+        flex-direction: row-reverse;
+        gap: 3rem
+    }
+
+    .cart-info > div {
+        height: min-content;
+        width: 100%;
+    }
+
+    .table-group {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 4rem 8rem;
+    }
+
+    .cart-info {
+        flex-direction: row-reverse;
+        gap: 10rem
+    }
+
+    table tr {
+        gap: 2.5rem;
+    }
+}

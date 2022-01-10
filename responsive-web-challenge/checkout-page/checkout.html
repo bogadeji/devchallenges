@@ -5,85 +5,134 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="checkout.css" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <section class="container">
-        <h1>Checkout</h1>
-        <div>
-            <div>
-                <form>
-                    <h2>Contact Information</h2>
-
-                    <label>E-mail</label>
-                    <div>
-                        <span class="material-icons">mail</span>
-                        <input placeholder="Enter your email.." type="email">
-                    </div>
-
-                    <label>Phon</label>
-                    <div>
-                        <span class="material-icons">call</span>
-                        <input placeholder="Enter your phone number.." type="number">
-                    </div>
-
-                    <h2>Shipping address</h2>
-
-                    <label>Full name</label>
-                    <div>
-                        <span class="material-icons">person</span>
-                        <input placeholder="Your Name.." type="email">
-                    </div>
-                    
-                    <label>Address</label>
-                    <div>
-                        <span class="material-icons">home</span>
-                        <input placeholder="Your address.." type="email">
-                    </div>
-
-                    <label>City</label>
-                    <div>
-                        <span class="material-icons">city</span>
-                        <input placeholder="Your city.." type="email">
-                    </div>
-
-                    <div>
-                        <label>Country</label>
-                        <div>
-                            <span class="material-icons">home</span>
-                            <input placeholder="Your country.." type="email">
-                        </div>
-
-                        <label>Postal code</label>
-                        <div>
-                            <span class="material-icons">house</span>
-                            <input placeholder="Your postal code.." type="email">
-                        </div>
-                    </div>
-
-                    <input type="checkbox">
-                    <label>Save this information for next time</label>
-                    <button>Continue</button>
-                </form>
-            </div>
-            <div>
+    <section class="container flow">
+        <h1 class="fs-700">Checkout</h1>
+        <div class="cart-info flex">
+            <div class="table-group bg-accent1">
                 <table>
-                    <tbody>
-
+                    <tbody id="table-body">
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td>Shipping</td>
-                            <td>$79</td>
+                            <td class="line-item fs-500 text-primary">Shipping</td>
+                            <td class="line-item--value shipping text-primary" id="shipping">$79</td>
                         </tr>
                         <tr>
-                            <td>Total</td>
-                            <td>$79</td>
+                            <td class="line-item fs-500 text-primary">Total</td>
+                            <td class="line-item--value total-price text-primary" id="total-price">$0</td>
                         </tr>
                     </tfoot>
                 </table>
             </div>
+
+
+            <div>
+                <div>
+                    <form class="flow" name="myForm" novalidate onsubmit="return(formValidation())">
+                        <div>
+                            <h2 class="fs-500 text-primary">Contact Information</h2>
+
+                            <div class="input-group email">
+                                <label class="input-group--label fs-100 text-tertiary">E-mail</label>
+                                <div class="input-group--input fs-200 text-secondary text-secondary">
+                                    <span class="material-icons">mail</span>
+                                    <input placeholder="Enter your email.." name="email" type="email" required aria-required="true">
+                                </div>
+                                <span class="error fs-50" id="email-error"></span>
+                            </div>
+
+                            <div class="input-group phone">
+                                <label class="input-group--label fs-100 text-tertiary">Phone </label>
+                                <div class="input-group--input fs-200 text-secondary">
+                                    <span class="material-icons">call</span>
+                                    <input placeholder="Enter your phone number.." name="phone" type="number" required>
+                                </div>
+                                <span class="error fs-50" id="phone-error"></span>
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <h2 class="fs-500 text-primary">Shipping address</h2>
+                        
+                            <div class="input-group full-name">
+                                <label class="input-group--label fs-100 text-tertiary">Full name </label>
+                                <div class="input-group--input fs-200 text-secondary">
+                                    <span class="material-icons">account_circle</span>
+                                    <input placeholder="Your Name.." name="fullName" type="text" required>
+                                </div>
+                                <span class="error fs-50" id="fullname-error"></span>
+                            </div>
+
+                            <div class="input-group address">
+                                <label class="input-group--label fs-100 text-tertiary">Address </label>
+                                <div class="input-group--input fs-200 text-secondary">
+                                    <span class="material-icons">home</span>
+                                    <input placeholder="Your address.." name="address" type="text" required>
+                                </div>
+                                <span class="error fs-50" id="address-error"></span>
+                            </div>
+
+                            <div class="input-group city">
+                                <label class="input-group--label fs-100 text-tertiary">City </label>
+                                    <div class="input-group--input fs-200 text-secondary">
+                                        <span class="material-icons">apartment</span>
+                                        <input placeholder="Your city.." name="city" type="text" required>
+                                </div>
+                                <span class="error fs-50" id="city-error"></span>
+                            </div>
+
+                            <div class="country-group flex">
+                                <div class="input-group country">
+                                    <label class="input-group--label fs-100 text-tertiary">Country</label>
+                                    <div class="input-group--input fs-200 text-secondary">
+                                        <span class="material-icons">public</span>
+                                        <select class="text-secondary" name="country" required>
+                                            <option value="" disable>Your country.. oiuoi.</option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            <option value="Ghana">Ghana</option>
+                                            <option value="Togo">Togo</option>
+                                            <option value="Benin">Benin</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Senegal">Senegal</option>
+                                            <option value="Mauritania">Mauritania</option>
+                                            <option value="Liberia">Liberia</option>
+                                            <option value="Sierra Leone">Sierra Leone</option>
+                                            <option value="Cape verde">Cape verde</option>
+                                        </select>
+                                    </div>
+                                    <span class="error fs-50" id="country-error"></span>
+                                </div>
+
+                                <div class="input-group postal-code">
+                                    <label class="input-group--label fs-100 text-tertiary">Postal code </label>
+                                    <div class="input-group--input fs-200 text-secondary">
+                                        <span class="material-icons">markunread_mailbox</span>
+                                        <input placeholder="Your postal code.." name="postalCode" type="number" required>
+                                    </div>
+                                    <span class="error fs-50" id="postalcode-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="input-group save">
+                                <label class="checkbox-label input-group--label fs-100 text-tertiary"><input type="checkbox" name="save" required><span class="checkmark"></span>Save this information for next time</label>
+                            </div>
+                            <div>
+                                <button type="submit" class="submit bg-light text-white fs-400" id="submit"  >Continue</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
         </div>
     </section>
+
+    <script src="data.js" type="module"></script>
+    <script src="checkout.js" type="module"></script>
 </body>
 </html>
