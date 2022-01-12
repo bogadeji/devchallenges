@@ -5,8 +5,200 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="portfolio2.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="portfolio.js"></script>
 </head>
 <body>
+    <main class="container grid">
+        <div>
+            <div class="grid">
+                <section class="details card grid ">
+                    <div class="details__img">
+                        <img src="assets/dev-jane-01.jpg" alt="">
+                    </div>
+                    <div class="details__name--title">
+                        <h1 class="name fw-bold fs-500">Billy Pearson</h1>
+                        <p class="text-tertiary">Front-end developer</p>
+                    </div>
+                    <div class="details__contact">
+                        <p><span class="material-icons">email</span>billy@example.com</p>
+                        <p><span class="material-icons">phone</span>(+603) 546 624 342)</p>
+                    </div>
+                    <div class="details__about text-tertiary">
+                        <p>Self-motivated developer, who is willing to learn and create outstanding UI applications.</p>
+                    </div>
+                </section>
+                <section class="experiences card grid">
+                    <h2 class="fs-500">Experiences</h2>
+                    <div class="grid">
+                        <img src="assets/adidas-9.svg" alt="" class="experience__logo">
+                        <div class="flow">
+                            <p class="period text-tertiary fs-200">Feb 2017 - Current</p>
+                            <p class="role text-secondary fs-300 fw-bolder">Front-end developer</p>
+                            <p class="text-tertiary fs-300">Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <img src="assets/h-m.svg" alt="" class="experience__logo">
+                        <div class="flow">
+                            <p class="period text-tertiary fs-200">Aug 2016 - Feb 2018</p>
+                            <p class="role text-secondary fs-300 fw-bolder">Junior front-end developer</p>
+                            <p class="text-tertiary fs-300">Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <img src="assets/nivea-logo.svg" alt="" class="experience__logo">
+                        <div class="flow">
+                            <p class="period text-tertiary fs-200">Jun 2015 - Aug 2016</p>
+                            <p class="role text-secondary fs-300 fw-bolder">Full-stack developer</p>
+                            <p class="text-tertiary fs-300">Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="hobbies card grid">
+                    <h2 class="fs-500">Hobbies</h2>
+                    <div class="flow">
+                        <img src="assets/reading.jpg" alt="">
+                        <h3 class="text-secondary fw-bold">Reading</h3>
+                        <p class="text-tertiary fs-300">Quisque feugiat malesuda molestie.</p>
+                    </div>
+                    <div class="flow">
+                        <img src="assets/outdoor.jpg" alt="">
+                        <h3 class="text-secondary fw-bold">Outdoor games</h3>
+                        <p class="text-tertiary fs-300">Quisque feugiat malesuda molestie.</p>
+                    </div>
+                    <div class="flow">
+                        <img src="assets/convos.jpg" alt="">
+                        <h3 class="text-secondary fw-bold">Heartfelt conversations</h3>
+                        <p class="text-tertiary fs-300">Quisque feugiat malesuda molestie.</p>
+                    </div>
+                </section>
+            </div>
+        
+        </div>
+        <div >
+            <div class="grid">
+
+            
+                <section class="skills card flow">
+                    <h3 class="uppercase fw-bolder">Front end</h3>
+                    <div class="grid">
+                        <p>React</p>
+                        <div class="skills__measure"><div>
+
+                        </div></div>
+                    </div>
+                    <div class="grid">
+                        <p>Javascript</p>
+                        <div class="skills__measure"><div>
+
+                        </div></div>
+                    </div>
+                    <div class="grid">
+                        <p>CSS</p>
+                        <div class="skills__measure"><div>
+
+                        </div></div>
+                    </div>
+                    <div class="grid">
+                        <p>Vue</p>
+                        <div class="skills__measure"><div>
+
+                        </div></div>
+                    </div>
+                    <div class="grid">
+                        <p>Redux</p>
+                        <div class="skills__measure"><div></div></div>
+                    </div>
+                    <div class="grid">
+                        <p>React Native</p>
+                        <div class="skills__measure"><div></div></div>
+                    </div>
+                </section>
+                
+                <section class="projects flow">
+                    <div class="card flow">
+                        <h2>Projects (<span class="project__no"></span>)</h2>
+                        <div class="project__tags flex fs-200">
+                            <button class="project-tag">React</button>
+                            <button class="project-tag">Vue</button>
+                            <button class="project-tag">Responsive</button>
+                            <button class="project-tag">HTML</button>
+                            <button class="project-tag">CSS</button>
+                        </div>
+                    </div>
+                    <div class="grid project--list">
+                        <div class="card project grid">
+                            <div class="project__img">
+                                <img src="assets/recipe.png" alt="">
+                            </div>
+                            <div class="project__details grid">
+                                <p class="fs-200 tag">#HTML #CSS </p>
+                                <h3 class="fs-500">Recipe Blog</h3>
+                                <p class="text-tertiary fs-300">In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io</p>
+                                <div class="project__btns fs-300 flex">
+                                    <button class="demo bg-primary text-white">Demo</button>
+                                    <button class="code bg-white text-primary">Code</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card project grid">
+                            <div class="project__img">
+                                <img src="assets/gallery.png" alt="">
+                            </div>
+                            <div class="project__details grid">
+                                <p class="fs-200 tag">#HTML #CSS #Responsive</p>
+                                <h3 class="fs-500">My Gallery</h3>
+                                <p class="text-tertiary fs-300">In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io</p>
+                                <div class="project__btns fs-300 flex">
+                                    <button class="demo bg-primary text-white">Demo</button>
+                                    <button class="code bg-white text-primary">Code</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card project grid">
+                            <div class="project__img">
+                                <img src="assets/checkout.png" alt="">
+                            </div>
+                            <div class="project__details grid">
+                                <p class="fs-200 tag">#HTML #CSS #Responsive</p>
+                                <h3 class="fs-500">Checkout</h3>
+                                <p class="text-tertiary fs-300">In this project, I work with HTML and CSS to create a responsive page. This page is similar with a page. The design is from devchallenge.io</p>
+                                <div class="project__btns fs-300 flex">
+                                    <button class="demo bg-primary text-white">Demo</button>
+                                    <button class="code bg-white text-primary">Code</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="blog flow">
+                    <div class="card flow">
+                        <h2>Blogs (<span class="blog__no">1</span>)</h2>
+                    </div>
+                    <div class="card blog__details grid">
+                        <div class="flow">
+                            <h2 class="text-accent2 fs-300">Blog</h2>
+                            <div class="blog__heading">
+                                <h3 class="blog__subheading text-secondary fs-500">How to organize your CSS</h3>
+                            </div>
+                            <div  class="blog__img--img small-screen"><img src="assets/blog2.jpg" alt=""></div>
+                            <div class="text-tertiary fs-300">
+                                <p>In this article I tell the story about Proin eu justo sit amet lacus bibendum tincidunt. Vivamus non volutpat nisl, a luctus mi.</p>
+
+                                <p>Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</p>
+                            </div>
+                            <p class="blog__link"><a class="text-primary " href="#">dev.to</a></p>
+                        </div>
+                        <div  class="blog__img--img desktop"><img src="assets/blog2.jpg" alt=""></div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    
 </body>
 </html>
